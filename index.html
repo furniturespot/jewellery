@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOOR ALBAHJAH - Luxury Jewelry</title>
+    <meta name="description" content="Discover exquisite gold, diamonds, and rare treasures at NOOR ALBAHJAH Jewelry. Premium quality and expert consultation.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Font Classes */
+        .font-logo {
+            font-family: 'Cinzel Decorative', cursive;
+        }
+        .font-heading {
+            font-family: 'Playfair Display', serif;
+        }
+        .font-body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Diamond Animation */
+        .diamond-animation {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(212, 175, 55, 0.5);
+            transform: rotate(45deg);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: rotate(45deg) translateY(0) scale(1); opacity: 1; }
+            50% { transform: rotate(45deg) translateY(-20px) scale(1.1); opacity: 0.7; }
+            100% { transform: rotate(45deg) translateY(0) scale(1); opacity: 1; }
+        }
+        
+        /* Mobile menu animation */
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateX(0); }
+            to { transform: translateX(100%); }
+        }
+        
+        .mobile-menu {
+            animation: slideIn 0.3s forwards;
+        }
+        
+        .mobile-menu.hidden {
+            animation: slideOut 0.3s forwards;
+        }
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .preloader-logo {
+            width: 100px;
+            height: 100px;
+            background: url('https://example.com/logo.png') no-repeat center;
+            background-size: contain;
+            position: relative;
+        }
+
+        .preloader-logo::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px solid transparent;
+            border-top-color: #D4AF37;
+            border-radius: 50%;
+            animation: spin 1.5s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .bg-matrix {
+            background-color: #000;
+            background-image: url('https://images.unsplash.com/photo-1611591437281-a5e71ffd7571?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-blend-mode: overlay;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .bg-dark {
+            background-color: #111111;
+        }
+
+        .text-gold {
+            color: #D4AF37;
+        }
+
+        .bg-gold {
+            background-color: #D4AF37;
+        }
+
+        .border-gold {
+            border-color: #D4AF37;
+        }
+
+        .letter-spacing-wide {
+            letter-spacing: 0.2em;
+        }
+
+        .letter-spacing-wider {
+            letter-spacing: 0.4em;
+        }
+
+        .section-divider {
+            height: 80px;
+            background: linear-gradient(to right, transparent, #D4AF3777, transparent);
+            mask-image: url("data:image/svg+xml,%3Csvg width='300' height='16' viewBox='0 0 300 16' xmlns='https://lapatiala.com/wp-content/uploads/2024/02/St.Edwards-Crown-UK.png'%3E%3Cpath d='M0 8 C 40 0, 60 0, 100 8 S 160 16, 200 8 S 260 0, 300 8' fill='none' stroke='%23D4AF37' stroke-width='2' stroke-linecap='round' /%3E%3C/svg%3E");
+            background-size: 300px 100%;
+            opacity: 0.6;
+        }
+
+        .decorative-border {
+            position: relative;
+            z-index: 1;
+        }
+
+        .decorative-border::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+        }
+
+        .decorative-border::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+        }
+
+        .feature-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .feature-card::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #D4AF37, #F5D062, #D4AF37);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .service-icon i {
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-icon::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #D4AF37;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.7;
+            }
+            70% {
+                transform: scale(1.1);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(0.95);
+                opacity: 0.7;
+            }
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #D4AF37;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 1024px) {
+            .jewelry-focus-image {
+                display: none;
+            }
+        }
+        
+        /* Hero image overlay */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.5));
+            z-index: 1;
+        }
+        
+        /* Mobile menu button */
+        .mobile-menu-button {
+            display: none;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: white;
+            background: rgba(0,0,0,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-button {
+                display: flex;
+            }
+            
+            .desktop-menu {
+                display: none;
+            }
+            
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 80%;
+                height: 100vh;
+                background: rgba(0,0,0,0.95);
+                padding: 2rem;
+                z-index: 1000;
+                overflow-y: auto;
+            }
+            
+            .mobile-menu .close-button {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                color: #D4AF37;
+                font-size: 1.5rem;
+                background: transparent;
+                border: none;
+            }
+            
+            .hero-cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero-cta-buttons button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-dark min-h-screen text-white font-body">
+    <div class="preloader">
+        <div class="preloader-logo"></div>
+    </div>
+    <div id="app">
+        <!-- Navigation -->
+        <nav class="bg-black py-6 border-b border-opacity-20 border-gold fixed w-full z-50">
+            <div class="container mx-auto px-4 lg:px-8 flex justify-between items-center">
+                <a href="#" class="text-gold text-3xl font-logo font-bold tracking-tight">NOOR ALBAHJAH</a>
+                <div class="desktop-menu hidden md:flex space-x-10">
+                    <a href="#" class="text-white hover:text-gold transition-colors duration-300 nav-link">Home</a>
+                    <a href="#" class="text-white hover:text-gold transition-colors duration-300 nav-link">About Us</a>
+                    <a href="#" class="text-white hover:text-gold transition-colors duration-300 nav-link">Collection</a>
+                    <a href="#" class="text-white hover:text-gold transition-colors duration-300 nav-link">Get Your Jewellery</a>
+                    <a href="#" class="text-white hover:text-gold transition-colors duration-300 nav-link">Contact</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="text-white hover:text-gold transition-colors duration-300 text-sm md:text-base">
+                        <i class="fas fa-phone-alt mr-2"></i> +971 50 123 4567
+                    </a>
+                    <button class="bg-green-500 text-white rounded-full h-10 w-10 flex items-center justify-center hover:bg-green-600 transition-colors duration-300">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                    </button>
+                </div>
+                <button id="mobileMenuButton" class="mobile-menu-button md:hidden h-10 w-10 rounded flex items-center justify-center">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu fixed hidden z-50">
+            <button id="closeMobileMenu" class="close-button">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="flex flex-col items-center mt-16">
+                <a href="#" class="text-white text-xl py-3 w-full text-center border-b border-gray-800 hover:text-gold">Home</a>
+                <a href="#" class="text-white text-xl py-3 w-full text-center border-b border-gray-800 hover:text-gold">About Us</a>
+                <a href="#" class="text-white text-xl py-3 w-full text-center border-b border-gray-800 hover:text-gold">Collection</a>
+                <a href="#" class="text-white text-xl py-3 w-full text-center border-b border-gray-800 hover:text-gold">Get Your Jewellery</a>
+                <a href="#" class="text-white text-xl py-3 w-full text-center border-b border-gray-800 hover:text-gold">Contact</a>
+            </div>
+            <div class="flex justify-center mt-8 space-x-4">
+                <a href="#" class="text-white hover:text-gold text-2xl">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="text-white hover:text-gold text-2xl">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-white hover:text-gold text-2xl">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+            <div class="mt-8 text-center text-gold">
+                <p><i class="fas fa-phone-alt mr-2"></i> +971 50 123 4567</p>
+            </div>
+        </div>
+
+        <!-- Hero Section with Jewelry Focus -->
+        <header class="relative overflow-hidden h-screen w-full pt-16">
+            <!-- Modified Hero Background with luxury diamond texture and shimmer effect -->
+            <div class="absolute inset-0">
+                <div class="absolute inset-0 bg-[url('https://images.prestigeonline.com/wp-content/uploads/sites/8/2023/10/05181605/markus-spiske-KP1bubr2j4A-unsplash-scaled-e1696501444859.jpg')] bg-cover bg-center bg-no-repeat opacity-90"></div>
+                <div class="hero-overlay"></div>
+                <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0iI0Q0QUYzNyIgZD0iTTUwIDI1TDI1IDUwbDEgMWgyNHYyNWgxdjI1aDFsMjUtMjVsLTEtMUg1MlYyNmgxVjI1eiIvPjwvc3ZnPg=='); background-size: 20px;"></div>
+            </div>
+            
+            <!-- Diamond sparkle animations -->
+            <div class="diamond-animation" style="left: 10vw; top: 20vh;"></div>
+            <div class="diamond-animation" style="left: 30vw; top: 50vh; animation-delay: 1s; width: 15px; height: 15px;"></div>
+            <div class="diamond-animation" style="left: 70vw; top: 30vh; animation-delay: 2s;"></div>
+            <div class="diamond-animation" style="left: 85vw; top: 65vh; animation-delay: 3s; width: 25px; height: 25px;"></div>
+            <div class="diamond-animation" style="left: 20vw; top: 70vh; animation-delay: 4s;"></div>
+
+            <!-- Hero Content -->
+            <div class="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
+                <div class="uppercase tracking-[0.3em] text-gold mb-4 text-shadow">Timeless Elegance</div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-gold mb-6 leading-tight">Luxury <span class="italic">Redefined</span></h1>
+                <h2 class="text-2xl md:text-3xl font-heading font-light text-white mb-8">Gold, Diamonds, and Rare Treasures</h2>
+                <p class="text-xl font-light text-white mb-12 max-w-4xl mx-auto leading-relaxed">
+                    Discover premium collections crafted by master jewelers from the finest materials,
+                    celebrating the art of luxury and timeless beauty.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 hero-cta-buttons">
+                    <button class="bg-gold hover:bg-opacity-90 text-black px-10 py-4 rounded-none font-semibold transition-all duration-300 transform hover:-translate-y-1 uppercase tracking-wider flex items-center justify-center">
+                        <span>VIEW COLLECTION</span>
+                        <i class="fas fa-gem ml-3 animate-pulse"></i>
+                    </button>
+                    <button class="border border-gold text-gold hover:bg-gold hover:text-black px-10 py-4 rounded-none font-semibold transition-all duration-300 transform hover:-translate-y-1 uppercase tracking-wider flex items-center justify-center">
+                        <span>BOOK A CONSULTATION</span>
+                        <i class="fas fa-calendar-alt ml-3"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <div class="w-6 h-10 border-2 border-gold rounded-full flex justify-center">
+                    <div class="w-1 h-3 bg-gold mt-2 rounded-full animate-scroll"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Why Choose Us Section -->
+        <div class="section-divider" data-sal="slide-up" data-sal-duration="500"></div>
+        <section class="bg-dark py-24">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="uppercase tracking-[0.3em] text-gold mb-4">Exclusive Experience</div>
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">Why Choose NOOR ALBAHJAH</h2>
+                    <p class="text-lg text-gray-300 max-w-2xl mx-auto">Excellence in every facet, trust in every transaction</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Feature 1 -->
+                    <div class="feature-card bg-black bg-opacity-50 p-8 rounded-none text-center border border-gray-800">
+                        <div class="service-icon mx-auto">
+                            <i class="fas fa-crown text-2xl text-gold"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold text-gold mb-4">Premium Quality</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Curated selection of the finest gold,
+                            diamonds, pearls, and precious metals from
+                            trusted sources worldwide.
+                        </p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="feature-card bg-black bg-opacity-50 p-8 rounded-none text-center border border-gray-800">
+                        <div class="service-icon mx-auto">
+                            <i class="fas fa-shield-alt text-2xl text-gold"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold text-gold mb-4">Licensed & Trusted</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Fully licensed trading company (License No:
+                            1476612) operating with complete
+                            transparency and integrity in Dubai.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="feature-card bg-black bg-opacity-50 p-8 rounded-none text-center border border-gray-800">
+                        <div class="service-icon mx-auto">
+                            <i class="fas fa-award text-2xl text-gold"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold text-gold mb-4">Expert Evaluation</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Professional assessment and fair pricing for
+                            your valuable jewellery with decades of
+                            market expertise.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <div class="section-divider"></div>
+        <section class="py-24 bg-black decorative-border relative overflow-hidden">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center mb-16">
+                    <div class="md:w-1/2 mb-10 md:mb-0">
+                        <div class="uppercase tracking-[0.3em] text-gold mb-4">Our Expertise</div>
+                        <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">Exceptional Services</h2>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            We provide unparalleled service in jewelry design, appraisal, and consultation,
+                            tailored to your individual preferences and style.
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="relative">
+                            <img src="https://lapatiala.com/wp-content/uploads/2024/02/St.Edwards-Crown-UK.png"
+                                 alt="Jewelry consultation" class="w-full max-w-md object-cover">
+                            <div class="absolute -bottom-6 -right-6 border-2 border-gold w-full h-full z-0"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Service 1 -->
+                    <div class="bg-black bg-opacity-50 p-8 border border-gray-800 hover:border-gold transition-colors duration-300">
+                        <div class="flex items-start mb-6">
+                            <div class="text-gold text-3xl mr-4">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <h3 class="text-2xl font-heading font-bold text-gold mb-4">Premium Collections</h3>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed">
+                            Discover our handpicked selection of rare and exquisite jewelry pieces for discerning collectors.
+                            Each piece tells a story of craftsmanship and heritage.
+                        </p>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="bg-black bg-opacity-50 p-8 border border-gray-800 hover:border-gold transition-colors duration-300">
+                        <div class="flex items-start mb-6">
+                            <div class="text-gold text-3xl mr-4">
+                                <i class="fas fa-magic"></i>
+                            </div>
+                            <h3 class="text-2xl font-heading font-bold text-gold mb-4">Jewelry Design</h3>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed">
+                            Create custom pieces that tell your unique story with our bespoke design service.
+                            Our designers will bring your vision to life with meticulous attention to detail.
+                        </p>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div class="bg-black bg-opacity-50 p-8 border border-gray-800 hover:border-gold transition-colors duration-300">
+                        <div class="flex items-start mb-6">
+                            <div class="text-gold text-3xl mr-4">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3 class="text-2xl font-heading font-bold text-gold mb-4">Expert Consultation</h3>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed">
+                            Our jewelry specialists provide personalized guidance to help you find or create your perfect piece.
+                            We consider your style, budget, and occasion to make perfect recommendations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collections Preview -->
+        <div class="section-divider"></div>
+        <section class="py-24 bg-dark">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="uppercase tracking-[0.3em] text-gold mb-4">Exquisite Creations</div>
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">Our Signature Collections</h2>
+                    <p class="text-lg text-gray-300 max-w-2xl mx-auto">Masterpieces of craftsmanship and luxury</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Collection 1 -->
+                    <div class="relative overflow-hidden group h-96">
+                        <img src="https://www.foreverjewelsindia.com/cdn/shop/files/Complete-Luxury-4.jpg?v=1688750670"
+                              alt="Diamond Collection"
+                              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-2xl font-heading font-bold text-gold mb-2">Diamond Elegance</h3>
+                                <p class="text-white">Exceptional brilliance in every facet</p>
+                                <button class="mt-4 text-gold border border-gold px-6 py-2 hover:bg-gold hover:text-black transition-all duration-300 opacity-0 group-hover:opacity-100">
+                                    View Collection
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                                        
+                    <!-- Collection 2 -->
+                    <div class="relative overflow-hidden group h-96">
+                        <img src="https://hazoorilaljewellers.com/wp-content/uploads/2023/01/Banner-6-mobile.jpg"
+                              alt="Gold Masterpieces"
+                              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-2xl font-heading font-bold text-gold mb-2">Gold Heritage</h3>
+                                <p class="text-white">Timeless beauty in precious metal</p>
+                                <button class="mt-4 text-gold border border-gold px-6 py-2 hover:bg-gold hover:text-black transition-all duration-300 opacity-0 group-hover:opacity-100">
+                                    View Collection
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                                        
+                    <!-- Collection 3 -->
+                    <div class="relative overflow-hidden group h-96">
+                        <img src="https://www.ijewels.co.in/cdn/shop/files/BLP034G_800x.jpg?v=1697960369"
+                              alt="Pearl Collection"
+                              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-2xl font-heading font-bold text-gold mb-2">Pearl Symphony</h3>
+                                <p class="text-white">Natural wonders from the ocean depths</p>
+                                <button class="mt-4 text-gold border border-gold px-6 py-2 hover:bg-gold hover:text-black transition-all duration-300 opacity-0 group-hover:opacity-100">
+                                    View Collection
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-16">
+                    <button class="bg-gold text-black px-12 py-4 rounded-none font-semibold hover:bg-opacity-90 transition-all duration-300 uppercase tracking-wider inline-flex items-center">
+                        Explore All Collections
+                        <i class="fas fa-arrow-right ml-3 animate-pulse"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="section-divider"></div>
+        <section class="py-24 bg-gold text-black">
+            <div class="container mx-auto px-4 lg:px-8 text-center">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6 leading-tight">Ready to Discover <br>Your Perfect Treasure?</h2>
+                <p class="text-xl mb-10 max-w-3xl mx-auto">
+                    Visit our showroom or book an appointment for a personalized consultation.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <button class="bg-black text-gold px-10 py-4 rounded-none font-semibold hover:bg-opacity-90 transition-all duration-300 transform hover:-translate-y-1 uppercase tracking-wider">
+                        BOOK AN APPOINTMENT
+                    </button>
+                    <button class="border-2 border-black px-10 py-4 rounded-none font-semibold hover:bg-black hover:text-gold transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center uppercase tracking-wider">
+                        <i class="fab fa-whatsapp mr-3 text-xl"></i> WHATSAPP US
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black py-16 border-t border-opacity-20 border-gold">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                    <div>
+                        <h3 class="text-gold text-xl font-logo font-bold mb-6 tracking-wide">NOOR ALBAHJAH</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Luxury jewelry store located in Dubai, UAE. Specializing in gold, diamonds, and rare gemstones.
+                            Licensed and trusted in the region for over a decade.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300 text-lg"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300 text-lg"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300 text-lg"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300 text-lg"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-gold font-heading font-bold mb-6 tracking-wide">Quick Links</h4>
+                        <ul class="space-y-3 text-gray-400">
+                            <li><a href="#" class="hover:text-gold transition-colors duration-300 flex items-center"><span class="w-2 h-2 bg-gold mr-2"></span> Home</a></li>
+                            <li><a href="#" class="hover:text-gold transition-colors duration-300 flex items-center"><span class="w-2 h-2 bg-gold mr-2"></span> About Us</a></li>
+                            <li><a href="#" class="hover:text-gold transition-colors duration-300 flex items-center"><span class="w-2 h-2 bg-gold mr-2"></span> Our Collection</a></li>
+                            <li><a href="#" class="hover:text-gold transition-colors duration-300 flex items-center"><span class="w-2 h-2 bg-gold mr-2"></span> Services</a></li>
+                            <li><a href="#" class="hover:text-gold transition-colors duration-300 flex items-center"><span class="w-2 h-2 bg-gold mr-2"></span> Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-gold font-heading font-bold mb-6 tracking-wide">Contact Info</h4>
+                        <ul class="space-y-4 text-gray-400">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mr-3 text-gold mt-1"></i>
+                                <span>Gold Souk, Deira,<br> Dubai, UAE</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-phone-alt mr-3 text-gold"></i>
+                                +971 50 123 4567
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope mr-3 text-gold"></i>
+                                info@nooralbahjah.com
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-gold font-heading font-bold mb-6 tracking-wide">Business Hours</h4>
+                        <ul class="space-y-4 text-gray-400">
+                            <li class="flex items-center">
+                                <i class="far fa-clock mr-3 text-gold"></i>
+                                Monday - Saturday:<br>
+                                10:00 AM - 9:00 PM
+                            </li>
+                            <li class="flex items-center">
+                                <i class="far fa-clock mr-3 text-gold"></i>
+                                Sunday:<br>
+                                12:00 PM - 6:00 PM
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 mt-16 pt-8 text-center text-gray-500">
+                    <p>© 2023 NOOR ALBAHJAH JEWELLERY TRADING LLC. All rights reserved. License No: 1476612</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/sal.js@0.8.5/dist/sal.js"></script>
+    <script>
+        // Initialize Sal.js for scroll animations
+        sal({
+            threshold: 0.1,
+            once: false
+        });
+
+        // Initialize GSAP animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        document.querySelectorAll('[data-animate="fade-in"]').forEach(el => {
+            gsap.from(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 80%"
+                },
+                opacity: 0,
+                y: 50,
+                duration: 1
+            });
+        });
+
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMobileMenu.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton) {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Create floating diamonds
+        function createDiamonds() {
+            const container = document.querySelector('#app');
+            for (let i = 0; i < 15; i++) {
+                const diamond = document.createElement('div');
+                diamond.className = 'diamond-animation hidden md:block';
+                diamond.style.left = Math.random() * 100 + 'vw';
+                diamond.style.top = Math.random() * 100 + 'vh';
+                diamond.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(diamond);
+            }
+        }
+
+        // Preloader animation
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.preloader').style.opacity = '0';
+                setTimeout(function() {
+                    document.querySelector('.preloader').style.display = 'none';
+                    createDiamonds();
+                    
+                    // Animate jewelry image in hero section
+                    gsap.from('.jewelry-focus-image', {
+                        duration: 1.5,
+                        x: 100,
+                        opacity: 0,
+                        ease: "power3.out"
+                    });
+                }, 500);
+            }, 1500);
+        });
+        
+        // Add some subtle animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate feature cards on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+                                    
+            document.querySelectorAll('.feature-card').forEach((card, index) => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transitionDelay = `${index * 0.1}s`;
+                observer.observe(card);
+            });
+            
+            // Add sparkle effect to buttons with gems
+            const gemButtons = document.querySelectorAll('.fa-gem');
+            gemButtons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    gsap.to(button, {
+                        y: -5,
+                        duration: 0.3,
+                        repeat: 3,
+                        yoyo: true
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

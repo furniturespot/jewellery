@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOOR ALBAHJAH - Exquisite Jewelry | Dubai</title>
+    <meta name="description" content="Discover the finest gold, diamonds, and rare treasures at NOOR ALBAHJAH - Dubai's premier luxury jewelry destination. Unmatched quality and expertise.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .font-logo {
+            font-family: 'Cinzel Decorative', cursive;
+        }
+        .font-heading {
+            font-family: 'Playfair Display', serif;
+        }
+        .font-body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .bg-dark-navy {
+            background-color: #0a0e17;
+        }
+        .bg-rich-black {
+            background-color: #010101;
+        }
+        .text-gold {
+            color: #d4af37;
+        }
+        .bg-gold {
+            background: linear-gradient(135deg, #d4af37 0%, #f8de7e 100%);
+        }
+        .border-gold {
+            border-color: #d4af37;
+        }
+        .text-shadow-gold {
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+        .glow-on-hover {
+            transition: box-shadow 0.3s ease;
+        }
+        .glow-on-hover:hover {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* New shimmer animation for gold elements */
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        .shimmer {
+            animation: shimmer 3s infinite linear;
+            background: linear-gradient(90deg, rgba(212,175,55,0.1), rgba(212,175,55,0.3), rgba(212,175,55,0.1));
+            background-size: 1000px 100%;
+        }
+        
+        /* Particle animation for luxury effect */
+        @keyframes particle {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-500px) rotate(360deg); opacity: 0; }
+        }
+        
+        /* Parallax effect */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .gradient-divider {
+            height: 1px;
+            background: linear-gradient(90deg, rgba(212,175,55,0) 0%, rgba(212,175,55,0.5) 50%, rgba(212,175,55,0) 100%);
+        }
+        .header-border {
+            border-bottom: 2px solid #d4af37;
+        }
+    </style>
+</head>
+<body class="bg-rich-black text-gray-300 min-h-screen">
+    <div id="app">
+        <!-- Preloader -->
+        <div id="preloader" class="fixed inset-0 bg-black z-50 flex items-center justify-center">
+            <div class="animate-pulse">
+                <div class="text-5xl text-gold luxury-font tracking-wider">NOOR ALBAHJAH</div>
+                <div class="gradient-divider my-4"></div>
+                <div class="text-center text-xs text-gray-500">LUXURY JEWELRY HOUSE</div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="fixed w-full bg-black z-50 py-4 shadow-xl header-border">
+            <div class="container mx-auto px-6 lg:px-8 flex justify-between items-center">
+                <a href="#" class="text-3xl text-gold font-logo tracking-wider hover:text-gold">NOOR ALBAHJAH</a>
+              
+                <div class="hidden lg:flex space-x-10 items-center">
+                    <a href="#" class="text-sm uppercase tracking-widest text-white hover:text-gold transition-colors duration-300">Home</a>
+                    <a href="#" class="text-sm uppercase tracking-widest text-gold border-b border-gold pb-1">About</a>
+                    <a href="#" class="text-sm uppercase tracking-widest text-white hover:text-gold transition-colors duration-300">Collections</a>
+                    <a href="#" class="text-sm uppercase tracking-widest text-white hover:text-gold transition-colors duration-300">Sell Jewellery</a>
+                    <a href="#" class="text-sm uppercase tracking-widest text-white hover:text-gold transition-colors duration-300">Contact</a>
+                    
+                    <div class="flex items-center ml-8">
+                        <a href="#" class="text-white hover:text-gold mr-6 text-sm">
+                            <i class="fas fa-phone-alt mr-1"></i> +971 50 1235566
+                        </a>
+                        <a href="#" class="bg-green-600 hover:bg-green-700 text-white rounded-full h-10 w-10 flex items-center justify-center transition-colors duration-300 hover:shadow-lg">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <button id="mobile-menu-button" class="lg:hidden text-gold focus:outline-none font-body">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="lg:hidden hidden fixed inset-0 bg-black bg-opacity-95 z-40 pt-24 px-6">
+            <div class="flex flex-col space-y-6 text-center">
+                <a href="#" class="text-lg text-white uppercase tracking-wider py-3 hover:text-gold transition-colors duration-300">Home</a>
+                <a href="#" class="text-lg text-gold uppercase tracking-wider py-3 border-b border-gold border-opacity-40">About</a>
+                <a href="#" class="text-lg text-white uppercase tracking-wider py-3 hover:text-gold transition-colors duration-300">Collections</a>
+                <a href="#" class="text-lg text-white uppercase tracking-wider py-3 hover:text-gold transition-colors duration-300">Sell Jewellery</a>
+                <a href="#" class="text-lg text-white uppercase tracking-wider py-3 hover:text-gold transition-colors duration-300">Contact</a>
+                
+                <div class="mt-10 flex justify-center space-x-6">
+                    <a href="#" class="text-white hover:text-gold">
+                        <i class="fas fa-phone-alt text-xl"></i>
+                    </a>
+                    <a href="#" class="text-green-500 hover:text-green-400">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="relative pt-20 pb-20 md:pt-28 md:pb-28 lg:pt-32 lg:pb-36 bg-black overflow-hidden parallax">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-gradient-to-b from-black via-black to-black opacity-90"></div>
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                      alt="Luxury jewelry background" class="w-full h-full object-cover">
+            </div>
+                        
+            <div class="container mx-auto px-6 lg:px-8 relative z-10 fade-in">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gold luxury-font mb-6 leading-tight" data-aos="fade-down" data-aos-duration="1000">
+                        A Legacy of <span class="text-shadow-gold">Exquisite</span> Jewels
+                    </h1>
+                    <div class="gradient-divider my-8 w-40 mx-auto"></div>
+                    <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                        For generations, NOOR ALBAHJAH has stood as the premier destination for those who seek the extraordinary in fine jewelry.
+                    </p>
+                    <a href="#our-story" class="inline-block border border-gold text-gold px-8 py-3 uppercase text-sm tracking-widest hover:bg-gold hover:text-black transition-all duration-300 hover:shadow-lg">
+                        Discover Our Story
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gold Particle Decorations -->
+        <div class="fixed inset-0 overflow-hidden pointer-events-none z-0 opacity-20">
+            <template id="particle-template">
+                <div class="absolute rounded-full bg-gold opacity-30" style="width: 3px; height: 3px;"></div>
+            </template>
+        </div>
+        
+        <!-- Our Story Section -->
+        <section id="our-story" class="py-24 bg-rich-black relative overflow-hidden">
+            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-32 rounded-full bg-gold opacity-10 blur-3xl"></div>
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <div class="lg:w-1/2 mb-16 lg:mb-0 lg:pr-12">
+                        <div class="relative overflow-hidden rounded-lg hover-scale transition-transform duration-500 glow-on-hover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
+                            <img src="https://images.unsplash.com/photo-1584302179602-e4c3d3fd629d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                  alt="NOOR ALBAHJAH showroom" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700">
+                            <div class="absolute bottom-8 left-8">
+                                <span class="bg-black bg-opacity-50 text-gold text-sm px-4 py-2 inline-block">Since 1995</span>
+                            </div>
+                        </div>
+                    </div>
+                                        
+                    <div class="lg:w-1/2">
+                        <div class="mb-8">
+                            <h2 class="text-3xl md:text-4xl lg:text-5xl text-black luxury-font mb-4">
+                                The NOOR ALBAHJAH Legacy
+                            </h2>
+                            <div class="gradient-divider w-24 mb-6"></div>
+                            <p class="text-gray-400 mb-6 leading-relaxed">
+                                Founded in the heart of Dubai's prestigious gold district, NOOR ALBAHJAH JEWELLERY TRADING LLC has grown from a passionate atelier to one of the region's most respected luxury jewelry houses.
+                            </p>
+                            <p class="text-gray-400 mb-6 leading-relaxed">
+                                Our journey began with a singular vision: to create a sanctuary for those who appreciate the exceptional. Over decades, we've cultivated relationships with the world's most discerning collectors and cultivated a reputation for uncompromising quality.
+                            </p>
+                            <p class="text-gray-400 leading-relaxed">
+                                Today, as a fully licensed entity (License No: 1476412), we combine time-honored craftsmanship with contemporary sophistication, serving clients across the globe from our Dubai headquarters.
+                            </p>
+                        </div>
+                                                
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="border-l border-gold pl-4 py-2">
+                                <h4 class="text-gold text-lg font-medium mb-2">2500+</h4>
+                                <p class="text-sm text-gray-400">Satisfied Clients Worldwide</p>
+                            </div>
+                            <div class="border-l border-gold pl-4 py-2">
+                                <h4 class="text-gold text-lg font-medium mb-2">28+</h4>
+                                <p class="text-sm text-gray-400">Years of Excellence</p>
+                            </div>
+                            <div class="border-l border-gold pl-4 py-2">
+                                <h4 class="text-gold text-lg font-medium mb-2">100%</h4>
+                                <p class="text-sm text-gray-400">Authenticity Guarantee</p>
+                            </div>
+                            <div class="border-l border-gold pl-4 py-2">
+                                <h4 class="text-gold text-lg font-medium mb-2">1476412</h4>
+                                <p class="text-sm text-gray-400">Dubai Trade License</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values Section -->
+        <section class="py-24 bg-black">
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl text-gold luxury-font mb-6">
+                        Our Guiding Principles
+                    </h2>
+                    <div class="gradient-divider w-24 mx-auto mb-8"></div>
+                    <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                        The uncompromising values that define every interaction at NOOR ALBAHJAH
+                    </p>
+                </div>
+                                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-dark-navy p-8 rounded-lg hover-scale transition-transform duration-300 glow-on-hover border border-opacity-10 border-gold">
+                        <div class="text-gold text-4xl mb-6">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3 class="text-xl text-gold luxury-font mb-4">Exemplary Craftsmanship</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Each piece we create or curate meets our exacting standards of excellence, ensuring only the finest materials and most skilled artistry are represented.
+                        </p>
+                    </div>
+                                        
+                    <div class="bg-dark-navy p-8 rounded-lg hover-scale transition-transform duration-300 glow-on-hover border border-opacity-10 border-gold">
+                        <div class="text-gold text-4xl mb-6">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="text-xl text-gold luxury-font mb-4">Unshakable Integrity</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            We conduct every transaction with complete transparency, providing full documentation and clear communication at every stage.
+                        </p>
+                    </div>
+                                        
+                    <div class="bg-dark-navy p-8 rounded-lg hover-scale transition-transform duration-300 glow-on-hover border border-opacity-10 border-gold">
+                        <div class="text-gold text-4xl mb-6">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="text-xl text-gold luxury-font mb-4">Discretion Assured</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Your privacy is paramount. We maintain absolute confidentiality for all clients, adhering to the highest professional standards.
+                        </p>
+                    </div>
+                                        
+                    <div class="bg-dark-navy p-8 rounded-lg hover-scale transition-transform duration-300 glow-on-hover border border-opacity-10 border-gold">
+                        <div class="text-gold text-4xl mb-6">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="text-xl text-gold luxury-font mb-4">Global Expertise</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            With deep knowledge of international markets, we provide insights into global jewelry trends and values to inform your decisions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Details Section -->
+        <section class="py-24 bg-gradient-to-b from-black to-rich-black">
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <div class="lg:w-1/2 mb-16 lg:mb-0 lg:pr-12">
+                        <div class="p-8 lg:p-12 bg-dark-navy rounded-lg border border-gold border-opacity-20 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 h-full w-1 bg-gradient-to-b from-gold via-gold to-transparent opacity-50"></div>
+                            <h3 class="text-2xl text-gold luxury-font mb-8">Company Particulars</h3>
+                                                    
+                            <div class="space-y-6">
+                                <div>
+                                    <p class="text-xs text-gold uppercase tracking-widest mb-2">Registered Name</p>
+                                    <h4 class="text-white text-lg">NOOR ALBAHJAH JEWELLERY TRADING LLC</h4>
+                                </div>
+                                                                
+                                <div>
+                                    <p class="text-xs text-gold uppercase tracking-widest mb-2">License Number</p>
+                                    <h4 class="text-white text-lg">1476412</h4>
+                                </div>
+                                                                
+                                <div>
+                                    <p class="text-xs text-gold uppercase tracking-widest mb-2">Location</p>
+                                    <h4 class="text-white text-lg">Office #104, Al Owais 3, Bur Dubai, UAE</h4>
+                                    <p class="text-gray-400 mt-1 text-sm">In the heart of Dubai's gold district</p>
+                                </div>
+                                                                
+                                <div>
+                                    <p class="text-xs text-gold uppercase tracking-widest mb-2">Specializations</p>
+                                    <div class="flex flex-wrap gap-2 mt-2">
+                                        <span class="bg-black bg-opacity-40 text-gold text-xs px-3 py-1 rounded-full">Gold</span>
+                                        <span class="bg-black bg-opacity-40 text-gold text-xs px-3 py-1 rounded-full">Diamonds</span>
+                                        <span class="bg-black bg-opacity-40 text-gold text-xs px-3 py-1 rounded-full">Pearls</span>
+                                        <span class="bg-black bg-opacity-40 text-gold text-xs px-3 py-1 rounded-full">Precious Gems</span>
+                                        <span class="bg-black bg-opacity-40 text-gold text-xs px-3 py-1 rounded-full">Luxury Watches</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        
+                    <div class="lg:w-1/2">
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl text-gold luxury-font mb-6">
+                            Dubai's Premier Jewelry Destination
+                        </h2>
+                        <div class="gradient-divider w-24 mb-8"></div>
+                                                
+                        <div class="grid grid-cols-1 gap-10">
+                            <div class="flex">
+                                <div class="text-gold text-xl mr-5 mt-1">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl text-white mb-3">Fully Licensed & Regulated</h4>
+                                    <p class="text-gray-400 leading-relaxed">
+                                        As a registered entity under Dubai's stringent regulatory framework (License No. 1476412), we offer complete peace of mind with every transaction, ensuring full legal compliance and documentation.
+                                    </p>
+                                </div>
+                            </div>
+                                                        
+                            <div class="flex">
+                                <div class="text-gold text-xl mr-5 mt-1">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl text-white mb-3">Strategic Location</h4>
+                                    <p class="text-gray-400 leading-relaxed">
+                                        Our showroom in Dubai's historic gold district places us at the center of the region's jewelry trade, surrounded by artisan workshops and the world's finest jewelers.
+                                    </p>
+                                </div>
+                            </div>
+                                                        
+                            <div class="flex">
+                                <div class="text-gold text-xl mr-5 mt-1">
+                                    <i class="fas fa-globe-africa"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl text-white mb-3">International Expertise</h4>
+                                    <p class="text-gray-400 leading-relaxed">
+                                        Our team's extensive global market knowledge allows us to source and value pieces with worldwide appreciation in mind, serving both regional and international collectors.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial Section -->
+        <section class="py-24 bg-dark-navy">
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl text-gold luxury-font mb-6">
+                        Client Experiences
+                    </h2>
+                    <div class="gradient-divider w-24 mx-auto mb-8"></div>
+                    <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                        The measure of our success is found in the satisfaction of those we serve
+                    </p>
+                </div>
+                                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-black p-8 rounded-lg border border-opacity-10 border-gold hover-scale transition-transform duration-300">
+                        <div class="flex items-center mb-6">
+                            <div class="text-gold text-3xl mr-4">
+                                <i class="fas fa-quote-left opacity-30"></i>
+                            </div>
+                            <div class="text-gold text-xl">
+                                ★★★★★
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-6 italic">
+                            "The attention to detail and knowledge at NOOR ALBAHJAH is unmatched. They helped me find the perfect piece for my collection and provided complete documentation."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="bg-gold bg-opacity-20 rounded-full h-10 w-10 flex items-center justify-center text-gold text-xl mr-3">
+                                S.A.
+                            </div>
+                            <div>
+                                <h4 class="text-gold">Sheikh Ahmed</h4>
+                                <p class="text-xs text-gray-500">Dubai</p>
+                            </div>
+                        </div>
+                    </div>
+                                        
+                    <div class="bg-black p-8 rounded-lg border border-opacity-10 border-gold hover-scale transition-transform duration-300">
+                        <div class="flex items-center mb-6">
+                            <div class="text-gold text-3xl mr-4">
+                                <i class="fas fa-quote-left opacity-30"></i>
+                            </div>
+                            <div class="text-gold text-xl">
+                                ★★★★★
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-6 italic">
+                            "I've dealt with many jewelers, but the professionalism and fair valuation at NOOR ALBAHJAH stands apart. They made selling my grandmother's necklace effortless."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="bg-gold bg-opacity-20 rounded-full h-10 w-10 flex items-center justify-center text-gold text-xl mr-3">
+                                M.R.
+                            </div>
+                            <div>
+                                <h4 class="text-gold">Madame Renault</h4>
+                                <p class="text-xs text-gray-500">Paris</p>
+                            </div>
+                        </div>
+                    </div>
+                                        
+                    <div class="bg-black p-8 rounded-lg border border-opacity-10 border-gold hover-scale transition-transform duration-300">
+                        <div class="flex items-center mb-6">
+                            <div class="text-gold text-3xl mr-4">
+                                <i class="fas fa-quote-left opacity-30"></i>
+                            </div>
+                            <div class="text-gold text-xl">
+                                ★★★★★
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-6 italic">
+                            "Their understanding of global jewelry markets is remarkable. I've come to trust their expertise completely when adding to my collection or evaluating pieces."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="bg-gold bg-opacity-20 rounded-full h-10 w-10 flex items-center justify-center text-gold text-xl mr-3">
+                                J.C.
+                            </div>
+                            <div>
+                                <h4 class="text-gold">James Cartwright</h4>
+                                <p class="text-xs text-gray-500">London</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-32 relative overflow-hidden shimmer" style="background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(20,15,1,0.9) 100%);">
+            <div class="absolute inset-0 z-0">
+                <div class=""></div>
+                <img src="https://colourlex.com/wp-content/uploads/2021/02/naples-yellow-painted-swatch-300x300.jpg"
+                      alt="Luxury black and gold jewelry background" class="w-full h-full object-cover">
+            </div>
+                        
+            <div class="container mx-auto px-6 lg:px-8 relative z-10 text-center">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl text-gold luxury-font mb-6">
+                    Experience the <span class="text-yellow-300">NOOR ALBAHJAH</span> Difference
+                </h2>
+                <div class="gradient-divider w-24 mx-auto mb-8"></div>
+                <p class="text-white mb-12 max-w-2xl mx-auto text-lg leading-relaxed">
+                    Visit our Dubai showroom or arrange a private consultation with one of our experts. Your journey to exceptional jewelry begins here.
+                </p>
+                                
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#" class="bg-gold hover:bg-yellow-300 text-black px-8 py-4 uppercase text-sm tracking-widest border border-gold hover:border-yellow-300 transition-all duration-300 hover:shadow-lg glow-on-hover inline-flex items-center justify-center">
+                        <i class="fas fa-calendar-alt mr-2"></i> Book Consultation
+                    </a>
+                    <a href="#" class="bg-transparent hover:bg-black text-white px-8 py-4 uppercase text-sm tracking-widest border border-yellow-300 hover:border-white transition-all duration-300 hover:shadow-lg glow-on-hover inline-flex items-center justify-center">
+                        <i class="fab fa-whatsapp mr-2 text-xl text-yellow-300"></i> WhatsApp +971 50 1235566
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black py-16 pt-24">
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <div>
+                        <h3 class="text-2xl text-gold luxury-font mb-6">NOOR ALBAHJAH</h3>
+                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">
+                            Premier jewelry trading company specializing in gold, silver, diamonds, pearls, and precious metals. Licensed and established in Dubai's prestigious gold district.
+                        </p>
+                        <p class="text-xs text-gray-500">License No. 1476412</p>
+                    </div>
+                                        
+                    <div>
+                        <h4 class="text-xl text-gold luxury-font mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300 text-sm">Home</a></li>
+                            <li><a href="#" class="text-gold hover:text-gold transition-colors duration-300 text-sm">About Us</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300 text-sm">Collections</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300 text-sm">Sell Your Jewelry</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300 text-sm">Private Consultations</a></li>
+                        </ul>
+                    </div>
+                                        
+                    <div>
+                        <h4 class="text-xl text-gold luxury-font mb-6 uppercase tracking-wider text-sm">Services</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300 text-sm">Jewelry Valuation</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300 text-sm">Custom Design</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300 text-sm">Estate Jewelry</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300 text-sm">Investment Pieces</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300 text-sm">International Shipping</a></li>
+                        </ul>
+                    </div>
+                                        
+                    <div>
+                        <h4 class="text-xl text-gold luxury-font mb-6 uppercase tracking-wider text-sm">Contact</h4>
+                        <ul class="space-y-3 text-gray-400 text-sm">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-gold mt-1 mr-4"></i>
+                                <span>Office #104, Al Owais 3, Bur Dubai, UAE</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-phone-alt text-gold mr-4"></i>
+                                <span>+971 50 1235566</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope text-gold mr-4"></i>
+                                <span>contact@nooralbahjah.com</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fab fa-whatsapp text-gold mr-4"></i>
+                                <span>+971 50 1235566</span>
+                            </li>
+                        </ul>
+                                                
+                        <div class="mt-6 flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-gold transition-colors duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                                
+                <div class="border-t border-gray-800 mt-16 pt-8">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <p class="text-gray-500 text-sm text-center md:text-left mb-4 md:mb-0">
+                            © 2023 NOOR ALBAHJAH JEWELLERY TRADING LLC. License No: 1476412. All rights reserved.
+                        </p>
+                                                
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-gray-500 hover:text-gold text-sm transition-colors duration-300">Privacy Policy</a>
+                            <a href="#" class="text-gray-500 hover:text-gold text-sm transition-colors duration-300">Terms of Service</a>
+                            <a href="#" class="text-gray-500 hover:text-gold text-sm transition-colors duration-300">Sitemap</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out-quad',
+            once: true,
+            mirror: false
+        });
+
+        // Create gold particles
+        function createParticles() {
+            const container = document.querySelector('#particle-template').parentElement;
+            if (!container) return;
+            
+            for (let i = 0; i < 50; i++) {
+                const particle = document.querySelector('#particle-template').content.cloneNode(true).querySelector('div');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.opacity = Math.random() * 0.5;
+                particle.style.width = `${Math.random() * 4 + 2}px`;
+                particle.style.height = particle.style.width;
+                particle.style.animation = `particle ${Math.random() * 10 + 10}s linear infinite`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                container.appendChild(particle);
+            }
+        }
+        // Preloader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('preloader').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('preloader').style.display = 'none';
+                }, 300);
+            }, 800);
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.classList.add('flex');
+            } else {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+            }
+        });
+
+        // Run on load
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('preloader').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('preloader').style.display = 'none';
+                }, 300);
+            }, 800);
+            
+            createParticles();
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-lg');
+                nav.classList.add('bg-black');
+                nav.classList.remove('bg-opacity-90');
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.classList.remove('bg-black');
+                nav.classList.add('bg-opacity-90');
+            }
+        });
+    </script>
+</body>
+</html>

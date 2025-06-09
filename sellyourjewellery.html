@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOOR ALBAHJAH - Sell Your Jewellery</title>
+    <meta name="description" content="Sell your gold, diamonds, and precious jewelry at NOOR ALBAHJAH Jewelry. Fair prices, expert evaluation, and immediate payment.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .font-logo {
+            font-family: 'Cinzel Decorative', cursive;
+        }
+        .font-heading {
+            font-family: 'Playfair Display', serif;
+        }
+        .font-body {
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .bg-dark-navy {
+            background-color: #0f172a;
+        }
+        .bg-darker-navy {
+            background-color: #0a0f1d;
+        }
+        .text-gold {
+            color: #D4AF37;
+        }
+        .bg-gold {
+            background-color: #D4AF37;
+        }
+        .border-gold {
+            border-color: #D4AF37;
+        }
+        .form-input {
+            background-color: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            border-color: #D4AF37;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+        }
+        .process-card {
+            background: linear-gradient(135deg, #111827 0%, #1a202c 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .process-card:hover {
+            transform: translateY(-8px);
+            border-color: #D4AF37;
+            box-shadow: 0 20px 25px -5px rgba(212, 175, 55, 0.1);
+        }
+        .feature-card {
+            background: linear-gradient(135deg, #111827 0%, #1a202c 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: #D4AF37;
+            box-shadow: 0 20px 25px -5px rgba(212, 175, 55, 0.1);
+        }
+        .hero-bg {
+            background: radial-gradient(circle at center, rgba(15, 23, 42, 0.8) 0%, rgba(10, 15, 29, 1) 100%), url('https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
+        }
+        .upload-area {
+            transition: all 0.3s ease;
+        }
+        .upload-area:hover {
+            border-color: #D4AF37;
+            background-color: rgba(212, 175, 55, 0.05);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #D4AF37 0%, #f1c40f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #D4AF37;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .jewelry-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-dark-navy min-h-screen text-white">
+    <div id="app">
+        <!-- Navigation -->
+        <nav class="bg-black py-4 fixed w-full z-50 border-b-2 border-gold">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <a href="#" class="text-gold text-3xl font-bold font-logo">NOOR ALBAHJAH</a>
+                <div class="hidden lg:flex space-x-10">
+                    <a href="#" class="text-white hover:text-gold nav-link transition-colors">Home</a>
+                    <a href="#" class="text-white hover:text-gold nav-link transition-colors">About Us</a>
+                    <a href="#" class="text-white hover:text-gold nav-link transition-colors">Collection</a>
+                    <a href="#" class="text-gold font-medium nav-link">Sell Your Jewellery</a>
+                    <a href="#" class="text-white hover:text-gold nav-link transition-colors">Contact</a>
+                </div>
+                <div class="flex items-center">
+                    <a href="#" class="text-white hover:text-gold mr-6 transition-colors">
+                        <i class="fas fa-phone-alt mr-1"></i> +971 50 1235566
+                    </a>
+                    <button class="bg-green-500 text-white rounded-full h-9 w-9 flex items-center justify-center hover:bg-green-600 transition-colors">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                    </button>
+                    <button class="lg:hidden text-white ml-4">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-bg pt-32 pb-24">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <div class="lg:w-1/2 mb-16 lg:mb-0">
+                        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold font-heading mb-6 leading-tight">
+                            <span class="gradient-text">Sell</span> Your<br>
+                            <span class="gradient-text">Precious</span> Jewellery
+                        </h1>
+                        <p class="text-xl text-white/90 mb-10 max-w-2xl">
+                            Convert your treasured jewelry into immediate cash with Dubai's most trusted jeweler. Our expert gemologists offer fair market evaluations and competitive pricing.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#evaluation" class="bg-gold text-black px-8 py-4 rounded font-semibold hover:bg-opacity-90 transition-colors duration-200 flex items-center">
+                                <i class="fas fa-gem mr-3"></i> Get Valuation Today
+                            </a>
+                            <a href="tel:+971501235566" class="border border-gold text-gold px-8 py-4 rounded font-semibold hover:bg-gold hover:bg-opacity-10 transition-colors duration-200 flex items-center">
+                                <i class="fas fa-phone-alt mr-3"></i> Call Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 flex justify-center">
+                        <img src="https://images.unsplash.com/photo-1589128777073-263566ae5e4d?auto=format&fit=crop&q=80&w=1080" 
+                             alt="Luxury Jewelry" 
+                             class="max-h-[500px] rounded-xl jewelry-animation shadow-2xl border-4 border-gold/20">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Indicators -->
+        <div class="bg-darker-navy py-8">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <p class="text-4xl font-bold text-gold mb-2">15+</p>
+                        <p class="text-white/80 uppercase text-sm tracking-wider">Years Experience</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl font-bold text-gold mb-2">10,000+</p>
+                        <p class="text-white/80 uppercase text-sm tracking-wider">Items Evaluated</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl font-bold text-gold mb-2">100%</p>
+                        <p class="text-white/80 uppercase text-sm tracking-wider">Secure Transactions</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl font-bold text-gold mb-2">5.0</p>
+                        <p class="text-white/80 uppercase text-sm tracking-wider">Customer Rating</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How It Works Section -->
+        <section class="py-20 bg-gradient-to-b from-darker-navy to-dark-navy">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold font-heading mb-4 text-white">Our <span class="gradient-text">Valuation Process</span></h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-gold via-yellow-500 to-gold mx-auto mb-6"></div>
+                    <p class="text-white/80 max-w-3xl mx-auto text-lg">
+                        Simple steps to turn your jewelry into cash with maximum value and minimum hassle
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Step 1 -->
+                    <div class="process-card rounded-xl p-6 text-center transform hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-20 h-20 bg-dark-navy rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-gold">
+                            <div class="relative w-12 h-12 flex items-center justify-center">
+                                <i class="fas fa-camera text-2xl text-gold"></i>
+                                <div class="absolute -top-2 -right-2 w-6 h-6 bg-gold rounded-full flex items-center justify-center">
+                                    <span class="text-xs font-bold text-black">1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-gold font-bold text-xl mb-3 font-heading">Upload Photos</h3>
+                        <p class="text-gray-300 text-sm">
+                            Send us high-quality images of your jewelry from multiple angles for preliminary assessment
+                        </p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="process-card rounded-xl p-6 text-center transform hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-20 h-20 bg-dark-navy rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-gold">
+                            <div class="relative w-12 h-12 flex items-center justify-center">
+                                <i class="fas fa-gem text-2xl text-gold"></i>
+                                <div class="absolute -top-2 -right-2 w-6 h-6 bg-gold rounded-full flex items-center justify-center">
+                                    <span class="text-xs font-bold text-black">2</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-gold font-bold text-xl mb-3 font-heading">Expert Analysis</h3>
+                        <p class="text-gray-300 text-sm">
+                            Our certified gemologists examine your jewelry's quality, craftsmanship, and material purity
+                        </p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="process-card rounded-xl p-6 text-center transform hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-20 h-20 bg-dark-navy rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-gold">
+                            <div class="relative w-12 h-12 flex items-center justify-center">
+                                <i class="fas fa-coins text-2xl text-gold"></i>
+                                <div class="absolute -top-2 -right-2 w-6 h-6 bg-gold rounded-full flex items-center justify-center">
+                                    <span class="text-xs font-bold text-black">3</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-gold font-bold text-xl mb-3 font-heading">Fair Valuation</h3>
+                        <p class="text-gray-300 text-sm">
+                            Receive a competitive price based on current market rates and your jewelry's unique attributes
+                        </p>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="process-card rounded-xl p-6 text-center transform hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-20 h-20 bg-dark-navy rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-gold">
+                            <div class="relative w-12 h-12 flex items-center justify-center">
+                                <i class="fas fa-wallet text-2xl text-gold"></i>
+                                <div class="absolute -top-2 -right-2 w-6 h-6 bg-gold rounded-full flex items-center justify-center">
+                                    <span class="text-xs font-bold text-black">4</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-gold font-bold text-xl mb-3 font-heading">Instant Payment</h3>
+                        <p class="text-gray-300 text-sm">
+                            Accept our offer and receive immediate payment - cash, transfer, or cheque as you prefer
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Evaluation Form Section -->
+        <section id="evaluation" class="py-20 bg-dark-navy relative overflow-hidden">
+            <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-gold rounded-full opacity-10 blur-3xl"></div>
+            <div class="absolute -top-20 -left-20 w-64 h-64 bg-gold rounded-full opacity-10 blur-3xl"></div>
+            <div class="container mx-auto px-4 relative">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold font-heading mb-4 text-white">Get Your <span class="gradient-text">Free Evaluation</span></h2>
+                        <div class="w-24 h-1 bg-gradient-to-r from-gold via-yellow-500 to-gold mx-auto mb-6"></div>
+                        <p class="text-white/80 max-w-2xl mx-auto text-lg">
+                            Complete this form and our jewelry specialists will contact you within 2 hours with a preliminary valuation
+                        </p>
+                    </div>
+                    
+                    <form class="space-y-6 bg-darker-navy/70 backdrop-blur-sm rounded-2xl p-6 md:p-10 border border-gold/20 shadow-xl">
+                        <!-- Full Name -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-white mb-3 font-medium">Full Name *</label>
+                                <input type="text" class="form-input w-full py-3 px-4 rounded-md text-white focus:outline-none" required>
+                            </div>
+                            <div>
+                                <label class="block text-white mb-3 font-medium">Phone Number *</label>
+                                <input type="tel" class="form-input w-full py-3 px-4 rounded-md text-white focus:outline-none" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-white mb-3 font-medium">Email *</label>
+                                <input type="email" class="form-input w-full py-3 px-4 rounded-md text-white focus:outline-none" required>
+                            </div>
+                            <div>
+                                <label class="block text-white mb-3 font-medium">Jewelry Type *</label>
+                                <select class="form-input w-full py-3 px-4 rounded-md text-white focus:outline-none" required>
+                                    <option value="">Select type</option>
+                                    <option>Gold Jewelry</option>
+                                    <option>Diamond Jewelry</option>
+                                    <option>Pearls</option>
+                                    <option>Silver Jewelry</option>
+                                    <option>Gemstone Jewelry</option>
+                                    <option>Antique Jewelry</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Description -->
+                        <div>
+                            <label class="block text-white mb-3 font-medium">Details About Your Jewelry *</label>
+                            <textarea rows="4" class="form-input w-full py-3 px-4 rounded-md text-white focus:outline-none" placeholder="Weight, age, certificates, special marks, condition, etc." required></textarea>
+                        </div>
+                        
+                        <!-- Upload Photos -->
+                        <div>
+                            <label class="block text-white mb-3 font-medium">Upload Clear Photos (Max 5) *</label>
+                            <div class="upload-area border border-dashed border-gold rounded-xl p-8 text-center cursor-pointer transition-all duration-300 hover:border-opacity-100 border-opacity-50">
+                                <div class="mx-auto w-16 h-16 mb-4 flex items-center justify-center bg-gold/10 rounded-full">
+                                    <i class="fas fa-cloud-upload-alt text-gold text-3xl"></i>
+                                </div>
+                                <p class="text-gray-300 mb-2 text-lg font-medium">Click to upload or drag & drop images</p>
+                                <p class="text-gray-400 text-sm">PNG, JPG, or JPEG (Max 10MB each)</p>
+                                <input type="file" multiple class="hidden" id="fileUpload">
+                            </div>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <div class="text-center pt-4">
+                            <button type="submit" class="relative overflow-hidden bg-gradient-to-r from-gold to-yellow-500 text-black px-12 py-4 rounded-lg font-bold hover:opacity-90 transition-all duration-300 shadow-lg group">
+                                <span class="relative z-10 flex items-center justify-center">
+                                    <i class="fas fa-paper-plane mr-3"></i> Request Valuation
+                                </span>
+                                <span class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="py-20 bg-darker-navy">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold font-heading mb-4 text-white">Why <span class="gradient-text">Choose Us</span></h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-gold via-yellow-500 to-gold mx-auto mb-6"></div>
+                    <p class="text-white/80 max-w-3xl mx-auto text-lg">
+                        Dubai's premier jewelry buyer with unmatched expertise, transparency, and customer service
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="feature-card rounded-2xl p-8 text-center transform hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-20 h-20 bg-dark-navy rounded-full flex items-center justify-center mx-auto mb-6 border-2 border-gold">
+                            <i class="fas fa-award text-2xl text-gold"></i>
+                        </div>
+                        <h3 class="text-gold font-bold text-2xl mb-4 font-heading">Licensed Excellence</h3>
+                        <p class="text-gray-300">
+                            Certified by Dubai Gold & Jewellery Group with over 15 years of trusted service in the UAE jewelry market
+                        </p>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="feature-card rounded-2xl p-8 text-center transform hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-20 h-20 bg-dark-navy rounded-full flex items-center justify-center mx-auto mb-6 border-2 border-gold">
+                            <i class="fas fa-hand-holding-usd text-2xl text-gold"></i>
+                        </div>
+                        <h3 class="text-gold font-bold text-2xl mb-4 font-heading">Top Market Prices</h3>
+                        <p class="text-gray-300">
+                            We offer 10-15% above typical market rates for fine jewelry due to our direct retail operations
+                        </p>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="feature-card rounded-2xl p-8 text-center transform hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-20 h-20 bg-dark-navy rounded-full flex items-center justify-center mx-auto mb-6 border-2 border-gold">
+                            <i class="fas fa-shield-alt text-2xl text-gold"></i>
+                        </div>
+                        <h3 class="text-gold font-bold text-2xl mb-4 font-heading">Complete Security</h3>
+                        <p class="text-gray-300">
+                            Your jewelry is insured from the moment it arrives in our possession - fully covered at its assessed value
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-20 bg-gradient-to-b from-dark-navy to-darker-navy">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold font-heading mb-4 text-white">Client <span class="gradient-text">Testimonials</span></h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-gold via-yellow-500 to-gold mx-auto mb-6"></div>
+                    <p class="text-white/80 max-w-3xl mx-auto text-lg">
+                        Hear from customers who have trusted us with their precious jewelry
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-darker-navy rounded-2xl p-6 md:p-8 border border-gold/20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center text-gold mr-4">
+                                <span class="text-xl font-bold">A</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-white">Amira K.</p>
+                                <div class="flex text-gold">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic">
+                            "I sold my grandmother's gold necklace at NOOR ALBAHJAH and received far more than other places offered. Their expert was so knowledgeable and made me feel comfortable throughout the process."
+                        </p>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="bg-darker-navy rounded-2xl p-6 md:p-8 border border-gold/20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center text-gold mr-4">
+                                <span class="text-xl font-bold">M</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-white">Mohammed R.</p>
+                                <div class="flex text-gold">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic">
+                            "The valuation process was transparent and professional. I appreciated how they explained every aspect of my diamond ring's worth. Received payment instantly via bank transfer."
+                        </p>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="bg-darker-navy rounded-2xl p-6 md:p-8 border border-gold/20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center text-gold mr-4">
+                                <span class="text-xl font-bold">S</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-white">Sophia L.</p>
+                                <div class="flex text-gold">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic">
+                            "From first contact to final payment, the team at NOOR ALBAHJAH was exceptional. They identified value in my collection that others had overlooked. Will definitely recommend to friends."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-16 bg-gradient-to-r from-gold to-yellow-600">
+            <div class="container mx-auto px-4">
+                <div class="text-center">
+                    <h3 class="text-3xl md:text-4xl font-bold font-heading mb-6 text-black">Ready to Sell Your Jewelry?</h3>
+                    <p class="text-black/80 mb-8 text-lg max-w-3xl mx-auto">
+                        Get started today with our fast, free valuation service. Our experts are standing by to help you.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#evaluation" class="bg-black text-gold px-8 py-4 rounded-lg font-bold hover:bg-opacity-90 transition-colors duration-200 shadow-lg">
+                            <i class="fas fa-gem mr-2"></i> Request Valuation
+                        </a>
+                        <a href="tel:+971501235566" class="bg-white text-black px-8 py-4 rounded-lg font-bold hover:bg-opacity-90 transition-colors duration-200 shadow-lg">
+                            <i class="fas fa-phone-alt mr-2"></i> Call: +971 50 1235566
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black/90 py-12 backdrop-blur-sm">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                    <!-- Logo & Description -->
+                    <div class="md:col-span-2">
+                        <h3 class="text-gold text-3xl font-bold font-logo mb-4">NOOR ALBAHJAH</h3>
+                        <p class="text-gray-400 mb-6">
+                            Premium jewelry trading company specializing in gold, silver, diamonds, pearls and precious metals. Licensed and located in Dubai's gold establishments.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-gold transition-colors">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-gold transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-gold transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-gold transition-colors">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Links -->
+                    <div>
+                        <h4 class="text-gold text-lg font-bold mb-4 uppercase tracking-widest">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-gray-400 hover:text-gold transition-colors flex items-center">
+                                <i class="fas fa-chevron-right text-xs text-gold mr-2"></i> Home
+                            </a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-gold transition-colors flex items-center">
+                                <i class="fas fa-chevron-right text-xs text-gold mr-2"></i> About Us
+                            </a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-gold transition-colors flex items-center">
+                                <i class="fas fa-chevron-right text-xs text-gold mr-2"></i> Jewelry Collection
+                            </a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-gold transition-colors flex items-center">
+                                <i class="fas fa-chevron-right text-xs text-gold mr-2"></i> Sell Your Jewelry
+                            </a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-gold transition-colors flex items-center">
+                                <i class="fas fa-chevron-right text-xs text-gold mr-2"></i> Contact Us
+                            </a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div>
+                        <h4 class="text-gold text-lg font-bold mb-4 uppercase tracking-widest">Contact Info</h4>
+                        <ul class="space-y-3 text-gray-400">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-gold mt-1 mr-3"></i>
+                                <span>Office #104, Al Owais 3, Bur Dubai, UAE</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-phone-alt text-gold mr-3"></i>
+                                <a href="tel:+971501235566" class="hover:text-gold transition-colors">+971 50 1235566</a>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope text-gold mr-3"></i>
+                                <a href="mailto:info@nooralbahjah.com" class="hover:text-gold transition-colors">info@nooralbahjah.com</a>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-globe text-gold mr-3"></i>
+                                <a href="#" class="hover:text-gold transition-colors">www.nooralbahjah.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Business Hours -->
+                    <div>
+                        <h4 class="text-gold text-lg font-bold mb-4 uppercase tracking-widest">Business Hours</h4>
+                        <ul class="space-y-3 text-gray-400">
+                            <li class="flex justify-between">
+                                <span>Monday - Friday</span>
+                                <span>9AM - 9PM</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Saturday</span>
+                                <span>10AM - 8PM</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Sunday</span>
+                                <span>10AM - 6PM</span>
+                            </li>
+                            <li class="pt-4">
+                                <p class="text-xs text-gray-500">Licensed by Dubai Economic Department<br>Company No: 1476412</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+                    <p>© 2023 NOOR ALBAHJAH JEWELLERY TRADING LLC. All rights reserved. | Designed with <i class="fas fa-heart text-pink-500"></i> in Dubai</p>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- WhatsApp Floating Button -->
+        <a href="#" class="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-xl hover:bg-green-600 transition-colors z-50">
+            <i class="fab fa-whatsapp text-3xl"></i>
+        </a>
+    </div>
+    
+    <script>
+        // Simple animation for scroll to top
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // File upload preview
+        const uploadArea = document.querySelector('.upload-area');
+        const fileInput = document.querySelector('#fileUpload');
+        
+        uploadArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+        
+        fileInput.addEventListener('change', () => {
+            if(fileInput.files.length > 0) {
+                uploadArea.innerHTML = `
+                    <div class="flex items-center justify-center space-x-2">
+                        <i class="fas fa-check-circle text-green-400 text-2xl"></i>
+                        <span class="text-white">${fileInput.files.length} file(s) selected</span>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

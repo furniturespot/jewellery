@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOOR ALBAHJAH - Luxury Jewelry</title>
+    <meta name="description" content="Discover exquisite gold, diamonds, and rare treasures at NOOR ALBAHJAH Jewelry. Premium quality and expert consultation.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+        }
+        .font-logo {
+            font-family: 'Cinzel Decorative', cursive;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .bg-dark-navy {
+            background-color: #0f172a;
+        }
+        .text-gold {
+            color: #D4AF37;
+        }
+        .bg-gold {
+            background-color: #D4AF37;
+        }
+        .border-gold {
+            border-color: #D4AF37;
+        }
+        .search-input {
+            background-color: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .product-card {
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .filter-btn.active {
+            background-color: #D4AF37;
+            color: #0f172a;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-dark-navy min-h-screen text-white pt-16">
+    <div id="app">
+        <!-- Navigation -->
+        <nav class="bg-black py-4 fixed top-0 left-0 right-0 z-50 border-b-2 border-gold">
+            <div class="container mx-auto px-4 flex justify-between items-center relative z-10">
+                <a href="#" class="text-gold text-2xl font-bold font-logo">NOOR ALBAHJAH</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="text-white hover:text-gold">Home</a>
+                    <a href="#" class="text-white hover:text-gold">About Us</a>
+                    <a href="#" class="text-white hover:text-gold">Collection</a>
+                    <a href="#" class="text-white hover:text-gold">Sell Your Jewellery</a>
+                    <a href="#" class="text-white hover:text-gold">Contact</a>
+                </div>
+                <div class="flex items-center">
+                    <a href="#" class="text-white hover:text-gold mr-4">
+                        <i class="fas fa-phone-alt"></i> +971 50 1235566
+                    </a>
+                    <button class="bg-green-500 text-white rounded-full h-8 w-8 flex items-center justify-center">
+                        <i class="fab fa-whatsapp"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Collection Header -->
+        <header class="py-16 bg-dark-navy">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-5xl md:text-6xl font-bold text-gold mb-6 tracking-tight">Our Collection</h1>
+                <p class="text-xl text-white mb-10 max-w-3xl mx-auto leading-relaxed font-light">
+                    Discover our curated selection of luxury jewellery, from timeless classics to contemporary masterpieces
+                </p>
+                
+                <!-- Search Bar -->
+                <div class="max-w-md mx-auto mb-10">
+                    <div class="relative flex items-center">
+                        <input type="text" id="searchInput" placeholder="Search jewellery..."
+                                class="search-input w-full py-2 px-4 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-gold">
+                        <button onclick="filterProducts()" class="absolute right-3">
+                            <i class="fas fa-search text-gold"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-2 mb-8">
+                    <button onclick="filterProducts('all')" class="filter-btn active px-4 py-2 rounded-md bg-gold text-black font-medium">All</button>
+                    <button onclick="filterProducts('gold')" class="filter-btn px-4 py-2 rounded-md bg-opacity-20 bg-white text-white font-medium hover:bg-opacity-30">Gold</button>
+                    <button onclick="filterProducts('diamond')" class="filter-btn px-4 py-2 rounded-md bg-opacity-20 bg-white text-white font-medium hover:bg-opacity-30">Diamond</button>
+                    <button onclick="filterProducts('pearl')" class="filter-btn px-4 py-2 rounded-md bg-opacity-20 bg-white text-white font-medium hover:bg-opacity-30">Pearls</button>
+                    <button onclick="filterProducts('silver')" class="filter-btn px-4 py-2 rounded-md bg-opacity-20 bg-white text-white font-medium hover:bg-opacity-30">Silver</button>
+                    <button onclick="filterProducts('platinum')" class="filter-btn px-4 py-2 rounded-md bg-opacity-20 bg-white text-white font-medium hover:bg-opacity-30">Platinum</button>
+                    <button onclick="filterProducts('precious')" class="filter-btn px-4 py-2 rounded-md bg-opacity-20 bg-white text-white font-medium hover:bg-opacity-30">Precious Metals</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Product Grid -->
+        <section class="py-12 bg-dark-navy">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="productGrid">
+                    <!-- Product 1 -->
+                    <div class="product-card bg-black bg-opacity-60 rounded-lg overflow-hidden" data-category="diamond">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                  alt="Elegant Diamond Necklace" class="w-full h-64 object-cover">
+                            <div class="absolute top-2 left-2 bg-gold text-black px-2 py-1 text-xs font-bold">FEATURED</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gold mb-2 tracking-wide">Elegant Diamond Necklace</h3>
+                            <p class="text-gray-300 text-sm mb-4">Luxurious diamond necklace with premium craftsmanship</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-medium">Price on Request</span>
+                                <button class="bg-gold text-black px-3 py-1 rounded text-sm font-medium hover:bg-opacity-80">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                                                    
+                    <!-- Product 2 -->
+                    <div class="product-card bg-black bg-opacity-60 rounded-lg overflow-hidden" data-category="gold">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                  alt="Classic Gold Bracelet" class="w-full h-64 object-cover">
+                            <div class="absolute top-2 left-2 bg-gold text-black px-2 py-1 text-xs font-bold">POPULAR</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gold mb-2">Classic Gold Bracelet</h3>
+                            <p class="text-gray-300 text-sm mb-4">Magnificent 24K gold bracelet with intricate design</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-medium">Price on Request</span>
+                                <button class="bg-gold text-black px-3 py-1 rounded text-sm font-medium hover:bg-opacity-80">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                                                    
+                    <!-- Product 3 -->
+                    <div class="product-card bg-black bg-opacity-60 rounded-lg overflow-hidden" data-category="pearl">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                  alt="Pearl Earring Set" class="w-full h-64 object-cover">
+                            <div class="absolute top-2 left-2 bg-gold text-black px-2 py-1 text-xs font-bold">NEW</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gold mb-2">Pearl Earring Set</h3>
+                            <p class="text-gray-300 text-sm mb-4">Natural pearls with gold accents</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-medium">Price on Request</span>
+                                <button class="bg-gold text-black px-3 py-1 rounded text-sm font-medium hover:bg-opacity-80">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                                                    
+                    <!-- Product 4 -->
+                    <div class="product-card bg-black bg-opacity-60 rounded-lg overflow-hidden" data-category="diamond">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                  alt="Vintage Diamond Ring" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gold mb-2">Vintage Diamond Ring</h3>
+                            <p class="text-gray-300 text-sm mb-4">Rare vintage piece with historic value</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-medium">Price on Request</span>
+                                <button class="bg-gold text-black px-3 py-1 rounded text-sm font-medium hover:bg-opacity-80">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                                                    
+                    <!-- Product 5 -->
+                    <div class="product-card bg-black bg-opacity-60 rounded-lg overflow-hidden" data-category="silver">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                  alt="Silver Chain Collection" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gold mb-2">Silver Chain Collection</h3>
+                            <p class="text-gray-300 text-sm mb-4">Sterling silver chains in various designs</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-medium">Price on Request</span>
+                                <button class="bg-gold text-black px-3 py-1 rounded text-sm font-medium hover:bg-opacity-80">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                                                    
+                    <!-- Product 6 -->
+                    <div class="product-card bg-black bg-opacity-60 rounded-lg overflow-hidden" data-category="platinum">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1589674781759-c21c37956a44?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                  alt="Platinum Wedding Band" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gold mb-2">Platinum Wedding Band</h3>
+                            <p class="text-gray-300 text-sm mb-4">Pure platinum bands with diamond accents</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-medium">Price on Request</span>
+                                <button class="bg-gold text-black px-3 py-1 rounded text-sm font-medium hover:bg-opacity-80">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- More Products -->
+                    <div class="product-card bg-black bg-opacity-60 rounded-lg overflow-hidden" data-category="gold">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                  alt="Gold Pendant" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gold mb-2">Gold Pendant</h3>
+                            <p class="text-gray-300 text-sm mb-4">Exquisite 18K gold pendant with fine detailing</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-medium">Price on Request</span>
+                                <button class="bg-gold text-black px-3 py-1 rounded text-sm font-medium hover:bg-opacity-80">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-black bg-opacity-60 rounded-lg overflow-hidden" data-category="precious">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1612786143266-b0360a6b6d0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                  alt="Rare Gemstone Brooch" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gold mb-2">Rare Gemstone Brooch</h3>
+                            <p class="text-gray-300 text-sm mb-4">Antique brooch with rare gemstones and precious metals</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-medium">Price on Request</span>
+                                <button class="bg-gold text-black px-3 py-1 rounded text-sm font-medium hover:bg-opacity-80">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-black bg-opacity-60 rounded-lg overflow-hidden" data-category="pearl">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1599458252573-56ae36120de1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                  alt="Pearl Strand Necklace" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gold mb-2">Pearl Strand Necklace</h3>
+                            <p class="text-gray-300 text-sm mb-4">Classic strand of South Sea pearls with gold clasp</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-white font-medium">Price on Request</span>
+                                <button class="bg-gold text-black px-3 py-1 rounded text-sm font-medium hover:bg-opacity-80">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Can't Find Section -->
+        <section class="py-16 bg-gold">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold text-black mb-4 tracking-tight">Can't Find What You're Looking For?</h2>
+                <p class="text-black text-lg mb-8 font-light italic leading-relaxed">
+                    With such access to exclusive pieces and our source specific items based on your requirements.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="bg-black text-gold px-8 py-3 rounded font-semibold hover:bg-gray-900 transition-colors duration-200">
+                        Contact Our Experts
+                    </button>
+                    <button class="bg-green-500 text-white px-8 py-3 rounded font-semibold hover:bg-green-600 transition-colors duration-200 flex items-center justify-center">
+                        <i class="fab fa-whatsapp mr-2"></i> WhatsApp Inquiry
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black py-10">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-gold text-xl font-bold mb-4 tracking-wide font-logo">NOOR ALBAHJAH JEWELLERY TRADING LLC</h3>
+                        <p class="text-gray-400 mb-4 leading-relaxed font-light">
+                            Premium jewellery trading company specializing in gold, silver, diamonds, pearls, and 
+                            precious metals. Licensed and located in Dubai's gold establishments.
+                        </p>
+                        <p class="text-gray-400">License No: 1476412</p>
+                    </div>
+                    <div>
+                        <h4 class="text-gold font-bold mb-4">Quick Links</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="#" class="hover:text-gold">Home</a></li>
+                            <li><a href="#" class="hover:text-gold">About Us</a></li>
+                            <li><a href="#" class="hover:text-gold">Collection</a></li>
+                            <li><a href="#" class="hover:text-gold">Sell Your Jewellery</a></li>
+                            <li><a href="#" class="hover:text-gold">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-gold font-bold mb-4">Contact Info</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li class="flex items-center"><i class="fas fa-map-marker-alt mr-2 text-gold"></i> Office #:104, Al Owais 3, Bur Dubai, UAE</li>
+                            <li class="flex items-center"><i class="fas fa-phone-alt mr-2 text-gold"></i> +971 50 1235566</li>
+                            <li class="flex items-center"><i class="fas fa-envelope mr-2 text-gold"></i> info@nooralbahjah.com</li>
+                            <li class="flex items-center"><i class="fas fa-globe mr-2 text-gold"></i> www.nooralbahjah.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                    <p>© 2023 NOOR ALBAHJAH JEWELLERY TRADING LLC. All rights reserved. License Company No: 1476412 | Dubai, UAE</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Product data array
+        const products = [
+            {
+                id: 1,
+                title: "Elegant Diamond Necklace",
+                description: "Luxurious diamond necklace with premium craftsmanship",
+                category: "diamond",
+                featured: true,
+                tags: ["featured"]
+            },
+            {
+                id: 2,
+                title: "Classic Gold Bracelet",
+                description: "Magnificent 24K gold bracelet with intricate design",
+                category: "gold",
+                featured: true,
+                tags: ["popular"]
+            },
+            {
+                id: 3,
+                title: "Pearl Earring Set",
+                description: "Natural pearls with gold accents",
+                category: "pearl",
+                featured: true,
+                tags: ["new"]
+            },
+            {
+                id: 4,
+                title: "Vintage Diamond Ring",
+                description: "Rare vintage piece with historic value",
+                category: "diamond",
+                featured: false
+            },
+            {
+                id: 5,
+                title: "Silver Chain Collection",
+                description: "Sterling silver chains in various designs",
+                category: "silver",
+                featured: false
+            },
+            {
+                id: 6,
+                title: "Platinum Wedding Band",
+                description: "Pure platinum bands with diamond accents",
+                category: "platinum",
+                featured: false
+            },
+            {
+                id: 7,
+                title: "Gold Pendant",
+                description: "Exquisite 18K gold pendant with fine detailing",
+                category: "gold",
+                featured: false
+            },
+            {
+                id: 8,
+                title: "Rare Gemstone Brooch",
+                description: "Antique brooch with rare gemstones and precious metals",
+                category: "precious",
+                featured: false
+            },
+            {
+                id: 9,
+                title: "Pearl Strand Necklace",
+                description: "Classic strand of South Sea pearls with gold clasp",
+                category: "pearl",
+                featured: false
+            }
+        ];
+
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const searchInput = document.getElementById('searchInput');
+            
+            // Initialize with all products showing
+            filterProducts('all');
+            
+            // Add click event to filter buttons
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                });
+            });
+            
+            // Add search functionality on input
+            searchInput.addEventListener('keyup', function() {
+                filterProducts();
+            });
+        });
+
+        function filterProducts(category = '') {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const productCards = document.querySelectorAll('.product-card');
+            let activeFilter = category;
+            
+            // If no category is passed, get the active filter
+            if (!category) {
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    if (btn.classList.contains('active')) {
+                        activeFilter = btn.textContent.trim().toLowerCase();
+                        if (activeFilter === 'all') activeFilter = '';
+                    }
+                });
+            }
+            
+            // Handle 'all' filter case
+            if (activeFilter === 'all') {
+                activeFilter = '';
+            }
+            
+            // Convert filter names to match data-category values
+            if (activeFilter === 'pearls') activeFilter = 'pearl';
+            if (activeFilter === 'precious metals') activeFilter = 'precious';
+            
+            productCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                const cardTitle = card.querySelector('h3').textContent.toLowerCase();
+                const cardDesc = card.querySelector('p').textContent.toLowerCase();
+                                
+                // Determine if the card should be visible
+                const matchesCategory = activeFilter === '' || cardCategory === activeFilter;
+                const matchesSearch = searchTerm === '' ||
+                                      cardTitle.includes(searchTerm) ||
+                                      cardDesc.includes(searchTerm);
+                                
+                if (matchesCategory && matchesSearch) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+            
+            // Handle empty results
+            const visibleCards = document.querySelectorAll('.product-card:not(.hidden)');
+            if (visibleCards.length === 0) {
+                const productGrid = document.getElementById('productGrid');
+                if (!document.querySelector('.no-results-message')) {
+                    const emptyMessage = document.createElement('div');
+                    emptyMessage.className = 'no-results-message col-span-full text-center py-10';
+                    emptyMessage.innerHTML = `
+                        <i class="fas fa-search mb-4 text-5xl text-gray-500"></i>
+                        <h3 class="text-2xl text-gray-300 mb-2">No products found</h3>
+                        <p class="text-gray-500">Try adjusting your search or filter to find what you're looking for.</p>
+                    `;
+                    productGrid.appendChild(emptyMessage);
+                }
+            } else {
+                const emptyMessage = document.querySelector('.no-results-message');
+                if (emptyMessage) {
+                    emptyMessage.remove();
+                }
+            }
+        }
+
+        // Make the searchInput trigger search on Enter key
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                filterProducts();
+            }
+        });
+    </script>
+</body>
+</html>
