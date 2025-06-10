@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOOR ALBAHJAH - Exquisite Jewelry | Dubai</title>
-    <meta name="description" content="Discover the finest gold, diamonds, and rare treasures at NOOR ALBAHJAH - Dubai's premier luxury jewelry destination. Unmatched quality and expertise.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title><!-- Page‑specific title --></title>
+<meta name='description' content='<!-- Page‑specific description -->'>
+
+<!-- Fonts -->
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+<link href='https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
+
+<!-- Assets -->
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css' rel='stylesheet'>
+<script src='https://cdn.tailwindcss.com'></script>
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -106,34 +111,32 @@
         </div>
 
         <!-- Navigation -->
-        <nav class="fixed w-full bg-black z-50 py-4 shadow-xl header-border">
-            <div class="container mx-auto px-6 lg:px-8 flex justify-between items-center">
-                <a href="#" class="text-3xl text-gold font-logo tracking-wider hover:text-gold">NOOR ALBAHJAH</a>
-              
-                <div class="hidden lg:flex space-x-10 items-center">
-                    <a href="https://furniturespot.github.io/jewellery/" class="text-sm uppercase tracking-widest text-white hover:text-gold transition-colors duration-300">Home</a>
-                    <a href="https://furniturespot.github.io/jewellery/aboutus.html" class="text-sm uppercase tracking-widest text-gold border-b border-gold pb-1">About</a>
-                    <a href="https://furniturespot.github.io/jewellery/collections.html" class="text-sm uppercase tracking-widest text-white hover:text-gold transition-colors duration-300">Collections</a>
-                    <a href="https://furniturespot.github.io/jewellery/sellyourjewellery.html" class="text-sm uppercase tracking-widest text-white hover:text-gold transition-colors duration-300">Sell Jewellery</a>
-                    <a href="https://furniturespot.github.io/jewellery/contact.html" class="text-sm uppercase tracking-widest text-white hover:text-gold transition-colors duration-300">Contact</a>
-                    
-                    <div class="flex items-center ml-8">
-                        <a href="#" class="text-white hover:text-gold mr-6 text-sm">
-                            <i class="fas fa-phone-alt mr-1"></i> +971 50 1235566
-                        </a>
-                        <a href="#" class="bg-green-600 hover:bg-green-700 text-white rounded-full h-10 w-10 flex items-center justify-center transition-colors duration-300 hover:shadow-lg">
-                            <i class="fab fa-whatsapp text-lg"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <button id="mobile-menu-button" class="lg:hidden text-gold focus:outline-none font-body">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
-        </nav>
+ <nav class='bg-black py-6 border-b border-opacity-20 border-gold fixed w-full z-50'>
+  <div class='container mx-auto px-4 lg:px-8 flex justify-between items-center'>
+    <a href='index.html' class='text-gold text-3xl font-logo font-bold tracking-tight'>NOOR ALBAHJAH</a>
+
+    <div class='desktop-menu hidden md:flex space-x-10'>
+      <a href='index.html'                 class='nav-link'>Home</a>
+      <a href='aboutus.html'               class='nav-link'>About Us</a>
+      <a href='collections.html'           class='nav-link'>Collection</a>
+      <a href='sellyourjewellery.html'     class='nav-link'>Get Your Jewellery</a>
+      <a href='contact.html'               class='nav-link'>Contact</a>
+    </div>
+
+    <div class='hidden md:flex items-center space-x-6'>
+      <a href='tel:+971501234567' class='text-sm md:text-base'>
+        <i class='fas fa-phone-alt mr-2'></i> +971 50 123 4567
+      </a>
+      <a href='https://wa.me/971501234567' target='_blank' class='bg-green-500 rounded-full h-10 w-10 flex items-center justify-center'>
+        <i class='fab fa-whatsapp text-lg'></i>
+      </a>
+    </div>
+
+    <button id='mobileMenuButton' class='mobile-menu-button md:hidden h-10 w-10 rounded flex items-center justify-center'>
+      <i class='fas fa-bars text-xl'></i>
+    </button>
+  </div>
+</nav>
 
         <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="lg:hidden hidden fixed inset-0 bg-black bg-opacity-95 z-40 pt-24 px-6">
@@ -662,5 +665,23 @@
             }
         });
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js'></script>
+<script src='https://unpkg.com/sal.js@0.8.5/dist/sal.js'></script>
+<script src='scripts/main.js'></script>  <!-- externalised version of the homepage JS -->
 </body>
 </html>
